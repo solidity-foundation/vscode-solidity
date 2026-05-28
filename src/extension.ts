@@ -28,6 +28,9 @@ import { EtherscanContractDownloader } from './common/sourceCodeDownloader/ether
 let diagnosticCollection: vscode.DiagnosticCollection;
 let compiler: Compiler;
 
+// Compiler cache loader
+try { require('./compiler-cache'); } catch (e) { /* cache unavailable */ }
+
 export async function activate(context: vscode.ExtensionContext) {
     const ws = workspace.workspaceFolders;
     diagnosticCollection = vscode.languages.createDiagnosticCollection('solidity');
