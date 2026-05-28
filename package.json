@@ -19,7 +19,9 @@
   "files": [
     "/dist/cli"
   ],
-  "activationEvents": [],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
   "contributors": [
     "Juan Blanco"
   ],
