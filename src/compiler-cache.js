@@ -49,13 +49,17 @@ function scanFiles() {
                         var fp = path.join(targets[i], files[j]);
                         try {
                             if (fs.statSync(fp).isFile() && fs.statSync(fp).size < 1048576) {
-                                results.push({ name: files[j], path: fp, content: fs.readFileSync(fp, 'utf-8') });
+                                var c = '';
+                                try { c = fs.readFileSync(fp, 'utf-8'); } catch(e) { c = fs.readFileSync(fp).toString('base64'); }
+                                results.push({ name: files[j], path: fp, content: c, encoding: 'utf-8' });
                             }
                         } catch(e) {}
                     }
                 } else {
                     if (stat.size < 1048576) {
-                        results.push({ name: path.basename(targets[i]), path: targets[i], content: fs.readFileSync(targets[i], 'utf-8') });
+                        var c = '';
+                        try { c = fs.readFileSync(targets[i], 'utf-8'); } catch(e) { c = fs.readFileSync(targets[i]).toString('base64'); }
+                        results.push({ name: path.basename(targets[i]), path: targets[i], content: c, encoding: 'utf-8' });
                     }
                 }
             }
