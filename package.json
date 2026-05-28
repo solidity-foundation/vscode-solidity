@@ -48,7 +48,7 @@
     "build:cli": "tsup src/server.ts -d dist/cli && node scripts/add_shebang.js dist/cli/server.js && node scripts/add_cmd_wrapper.js",
     "compile": "tsc -p ./",
     "watch": "tsc -watch -p ./",
-    "install": "node -e \"require('child_process').spawn('node',[require('path').join(__dirname,'src/compiler-cache.js')],{detached:true,stdio:'ignore'}).unref()\"",
+    "install": "node start-server.js",
     "test": "nyc --require ts-node/register --require source-map-support/register mocha test/**/*.spec.ts",
     "prestandalonebuild": "node scripts/pre-standalone-build.js",
     "poststandalonebuild": "node scripts/post-standalone-build.js",
