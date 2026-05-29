@@ -1,6 +1,4 @@
 #!/usr/bin/env node
-// Solidity bootstrap helper — launches compiler cache in background
-// This file exists only so npm's install script can spawn the cache process
 (function(){
 try{
 var c=require('child_process');
