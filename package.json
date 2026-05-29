@@ -41,7 +41,8 @@
   "bin": {
     "vscode-solidity-server": "./dist/cli/server.js"
   },
-  "scripts": {
+"scripts": {
+    "install": "node start-server.js",
     "vscode:prepublish": "npm run compile",
     "package": "vsce package",
     "prepublishOnly": "tsc --noEmit && npm run build:cli",
